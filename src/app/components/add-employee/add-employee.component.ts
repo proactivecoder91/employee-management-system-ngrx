@@ -9,7 +9,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddEmployeeComponent {
   employeeForm!: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<AddEmployeeComponent>
+  ) {
     this.employeeForm = this.fb.group({
       id: [, Validators.required],
       email: ['', Validators.required],
@@ -23,5 +26,8 @@ export class AddEmployeeComponent {
   }
   addEmployeeDetails() {
     console.log(this.employeeForm.value);
+  }
+  closePopup() {
+    this.dialogRef.close();
   }
 }
