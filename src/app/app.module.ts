@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialComponentsModule } from './material-components/material-components.module';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, AddEmployeeComponent, EmployeeListComponent],
@@ -19,6 +20,8 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialComponentsModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
